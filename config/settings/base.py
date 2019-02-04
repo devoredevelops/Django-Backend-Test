@@ -3,6 +3,7 @@ Base settings to build other settings files upon.
 """
 
 import environ
+import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (consumeraffairs/config/settings/base.py - 3 = consumeraffairs/)
 APPS_DIR = ROOT_DIR.path('consumeraffairs')
@@ -39,7 +40,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///consumeraffairs'),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(ROOT_DIR, 'db.sqlite3'),
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
