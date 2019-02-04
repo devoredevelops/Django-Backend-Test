@@ -74,5 +74,14 @@ Deployment
 The following details how to deploy this application.
 
 
+Instructions on Running the Web Server Locally:
 
+0. $ cd consumerffairs
+1. python3 -m venv ENV
+2. $ source ENV/bin/activate
+3. $ pip install -r requirements/local.txt
+4. $ python manage.py migrate
+5. $ python manage.py runserver 0.0.0.0:8000
+6. $ pytest
+7. $ python manage.py test
 
