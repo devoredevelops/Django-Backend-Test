@@ -1,0 +1,7 @@
+alias ll='ls -lart'
+alias py='python3'
+alias act='source ENV/bin/activate'
+alias rrr='python manage.py runserver'
+alias mml='python manage.py showmigrations'
+alias mmk='python manage.py makemigrations -v 3'
+alias mmr='python manage.py migrate -v 3'
