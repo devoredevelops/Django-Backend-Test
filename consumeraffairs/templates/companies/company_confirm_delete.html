@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Confirm Delete: {{ company.name }}{% endblock %}
+
+{% block content %}
+  <h1>Confirm Delete: {{ company.name }}</h1>
+  <form class="form-horizontal" method="post">
+    {% csrf_token %}
+    <!-- {{ form|crispy }} -->
+    Are you sure you want to delete the company "<em>{{ company.name }}</em>"?
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn" value="Submit">Delete</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}
