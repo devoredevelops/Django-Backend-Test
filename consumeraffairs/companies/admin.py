@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .forms import CompanyForm
+from .models import Company
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+
+    form = CompanyForm
