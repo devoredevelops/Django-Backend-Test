@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}Companies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Companies</h2>
+  <div class="row">
+    <div class="col-sm-12">
+      <a class="btn btn-primary" href="{% url 'companies:create' %}" role="button">Add Company</a>
+    </div>
+  </div>
+  <div class="list-group">
+    {% for company in object_list %}
+      <a href="{% url 'companies:detail' company.name %}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ company.name }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
