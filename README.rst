@@ -32,42 +32,6 @@ Setting Up Your Users
 
 For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
 
-Type checks
-^^^^^^^^^^^
-
-Running type checks with mypy:
-
-::
-
-  $ mypy consumeraffairs
-
-Test coverage
-^^^^^^^^^^^^^
-
-To run the tests, check your test coverage, and generate an HTML coverage report::
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-Running tests with py.test
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  $ pytest
-
-Live reloading and Sass CSS compilation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
-
-
-
-
-
 Deployment
 ----------
 
@@ -76,12 +40,13 @@ The following details how to deploy this application.
 
 Instructions on Running the Web Server Locally:
 
-0. $ cd consumerffairs
+0. $ cd consuemraffairs
 1. python3 -m venv ENV
 2. $ source ENV/bin/activate
 3. $ pip install -r requirements/local.txt
 4. $ python manage.py migrate
 5. $ python manage.py runserver 0.0.0.0:8000
-6. $ pytest
-7. $ python manage.py test
-
+6. Go to address and create a user account
+7. Click "Companies" and add a company (but please do not insert spaces - I'm working on this bug)
+8. After success, click "Reviews" and select the company you entered along with data for the other fields. (The no-spaces rule applies again.)
+9. Profit!!
