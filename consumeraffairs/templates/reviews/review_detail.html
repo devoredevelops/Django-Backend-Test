@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{% if object.title %}
+Review: {{ object.title }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      {% if object.title %}
+        <h2>{{ object.title }}</h2>
+        <p>{{ object.title }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+<!-- Action buttons -->
+<div class="row">
+
+  <div class="col-sm-12">
+    <a class="btn btn-primary" href="{% url 'reviews:update' object.title %}" role="button">Update</a>
+    <a class="btn btn-primary" href="{% url 'reviews:delete' object.title %}" role="button">Delete</a>
+    <!-- Your Stuff: Custom user template urls -->
+  </div>
+
+</div>
+<!-- End Action buttons -->
+
+
+</div>
+{% endblock content %}
+
