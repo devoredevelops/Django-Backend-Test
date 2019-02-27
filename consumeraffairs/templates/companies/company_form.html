@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ company.name }}{% endblock %}
+
+{% block content %}
+  {% if company.name %}
+    <h1>{{ company.name }}</h1>
+  {% endif %}
+  <form class="form-horizontal" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn" value="Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}
